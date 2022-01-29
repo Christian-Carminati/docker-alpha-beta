@@ -1,0 +1,17 @@
+version: '3'
+services:
+alpha:
+build: ./alpha
+ports:
+- "5001:5000"
+beta:
+build: ./beta
+ports:
+- "5002:5000"
+nginx:
+build: ./nginx
+ports:
+- "8080:80"
+depends_on:
+- alpha
+- beta
